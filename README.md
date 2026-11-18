@@ -91,20 +91,6 @@ set "LLAMA_ARG_CACHE_RAM=0"
 ollama serve
 ```
 
-Keep that server window open. The notebook's current request uses `num_gpu=0` and a longer timeout for CPU inference.
-
-## Existing GitHub repository and environment
-
-Use your existing **MSDS565-MovieGenre-Team3** repository. Upload `README.md`, `environment.yml`, `models/` and `notebooks/` directly to its root. Upload the contents of the extracted project folder, so there is no second `MSDS565-MovieGenre-Team3` folder inside the GitHub repository.
-
-Keep your actual exported `environment.yml` if you have already generated it locally. The environment file distributed in this archive is a bootstrap specification based on observed package versions, and must be replaced by your actual Conda export before submission. In Windows Command Prompt, with the repository at the path below, export directly using:
-
-```cmd
-"%USERPROFILE%\anaconda3\Scripts\conda.exe" env export --name msds565 --no-builds --file "%USERPROFILE%\P3_GitHub\MSDS565-MovieGenre-Team3\environment.yml"
-```
-
-Use the actual repository location if you extracted it elsewhere. This command uses the canonical `environment.yml` filename supported by Conda's environment exporter.
-
 ## Run or review the notebooks locally
 
 Open the saved notebooks to review their existing outputs. For execution, extract the separately supplied **MovieGenre_work.zip** beside the repository: the two folders must share a parent. Keep its CSVs, embedding matrix and teacher JSONL outside the repo. The notebook defaults use that sibling folder; `P3_WORK_DIR` and `P3_DATA_PATH` can select another external location.
@@ -129,7 +115,3 @@ The six classifiers use `P3_N2_<rep>_logreg_<genre>.pkl` exactly. Notebook 3 req
 ## Interpretation limits
 
 The supplied text audit flags 121 test movies whose normalized plots also occur in training, plus 169 plot groups with conflicting selected-genre labels affecting 379 movies. These source-quality issues may influence measured scores. The supplied split and labels are retained. MiniLM reads a short prefix, while TF-IDF uses the full text. Teacher and students also differ in input coverage and training sample size. SHAP contributions explain model behavior in log-odds and are not causal claims.
-
-## Course submission
-
-Use the existing team repository **MSDS565-MovieGenre-Team3**. Keep all three exact notebook filenames, required model artifacts, saved outputs and the actual exported environment. Raw data, exported CSVs, cached matrices and checkpoint notebooks do not belong in GitHub. Meeting minutes and the individual peer evaluations are separate graded items and should follow the instructor's submission route.
