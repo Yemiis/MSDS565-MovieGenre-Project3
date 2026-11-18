@@ -1,0 +1,22 @@
+# BOOTSTRAP SPECIFICATION: replace with your actual msds565 Conda export before submission.
+# If you already exported environment.yml locally, keep that actual export.
+name: msds565
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - numpy==2.3.5
+      - pandas==2.3.3
+      - scikit-learn==1.7.2
+      - matplotlib==3.10.6
+      - seaborn==0.13.2
+      - ollama==0.6.2
+      - scipy
+      - sentence-transformers
+      - shap
+      - jupyterlab
+      - ipykernel
+      - nbformat
+      - httpx[socks]
